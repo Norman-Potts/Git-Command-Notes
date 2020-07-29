@@ -1,0 +1,336 @@
+<!DOCTYPE html/>
+<html lang="en" >
+<html>
+	<head>			
+		<title>Norman Potts</title>		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">				
+		<style  type="text/css" >			
+			a { text-decoration: none; }			
+			body { }	
+
+			.ActiveTopic { border-radius: 10px; border: 1px solid black; }
+			#theEnd { border-top: 3px solid black; display: block; text-align: center; }
+			.mapmarker { display: inline-block; }
+			svg { display: inline-block; }
+			/*background: rgb(179, 255, 217);*/
+			.myGreen { background: rgb(179, 255, 217); }
+			.myPurple { background: rgb(198, 179, 255); }
+			.myBlue { background: 	rgb(179, 236, 255); }
+			.myRed { background: 	rgb(255, 179, 179); }
+			.myYellow { background: rgb(255, 255, 179); }
+
+			.myContainerTOP { display: block; text-align: center;  font-family:  "Arial"; padding: 1em; margin: 1em; border: 3px solid black; border-radius: 30px; overflow: auto;}		
+
+
+			#RigtNavBar { height: 95vh; display: block;	border-left: 3px solid black; padding: 0.5em; overflow-y: auto; overflow-x: hidden; margin: 0; }			
+			#art { display: block; float: left; width: auto; margin: 0; overflow: hidden; height: 95vh; background: white; }		
+			#MyImage { width: 120px; height: auto; background: white; border-radius: 5px; padding: 3px; border: 1px solid black; }			
+			.Blog_Post { padding: 1em; }		
+			.Blog_Post p { width: 95%; text-indent: 3em; }
+			#Quote { margin-top: 2em; margin-bottom: 2em; font-family: "Arial"; }			
+			.bold { font-weight: bold; }
+			.black { color: rgb(0,0,0); }			
+			.navy { color: navy; }			
+			#myContainerRight { text-align: center; padding: 0.5em; overflow: auto; display: block; }			
+			.page { display: inline-block; background: white; color: black; width: 50vw; overflow: hidden; text-align: left; font-family: "Arial"; margin-bottom: 4em; font-size: 1em; }
+			.page .pcontent { padding-left: 1em; padding-right: 1em; padding-top: 1em; display: block; font-size: 1em; overflow: hidden; border-left: 1px solid red; padding-bottom: 4em; } 			
+			.page .headerContent h1 { font-size: 1.5rem; margin: 0; padding: 0; display: inline; overflow: hidden; }
+			.txtindent4em { text-indent: 4em; }
+			.twoRem { font-size: 2rem; }
+			.page .headerContent { display: flex;  justify-content: left;  align-items: flex-end; height: 100%; padding-right: 1em; padding-left: 1em; padding-bottom: 1em; border-left: 1px solid red; }
+			.page .pheader { border-bottom: 1px solid navy; height: 13.69%; padding:0; margin:0; overflow:hidden; }			
+			.page .dateBlock { width: 14.6%; height: 100%; padding: 1em; display: block; float:left; border-right: 1px solid white; }			
+			.page .pGutter { width: 14.6%; display: block; float: left; border-right: 1px solid white; padding-left: 1em; padding-right: 1em; padding-top: 1em; }
+			.page .pmain { display: block;	 margin:0; padding:0; overflow: hidden; }
+			.fontSizeBigger { font-size: 1.3em; }			
+			#PageCounter { position: fixed;  bottom: 0%; left: 40%; 	}		
+			.LogoIcons { width: 30px; }			
+
+			.textcenter { text-align:center; margin:0; }
+			.rightAlign { float: right; }			
+			#RightImgBlock { display: inline-block; text-align: center; }
+			#RightImgBlock h1 { text-decoration: underline; }
+			.pageWideImage { width: 90%; height: auto; background: white; border-radius: 5px; padding: 3px; border: 1px solid black; display: block; margin: 5%; }
+			#parkway { max-height: 90vh; max-width: 90%; background: white; border-radius: 5px; padding: 3px; border: 1px solid black; display: inline-block; margin-bottom: 2em; }			
+			#snowball { max-height: 90vh; max-width: 90%; background: white; border-radius: 5px; padding: 3px; border: 1px solid black; display: inline-block; margin-bottom: 2em; }
+
+			table {
+				display: inline-table;
+				border: 2px solid black;
+				/*width: 30%;*/
+				border-collapse: collapse;
+				margin: 1em;
+			}
+			th, td {
+			  padding-left: 1em;  padding-right: 1em;
+			  text-align: left;
+			}
+			tr {
+				border-bottom: 1px solid black;
+			}
+			caption {
+				border-left: 2px solid black;
+				border-right: 2px solid black;
+				border-top: 2px solid black;
+				font-weight: bold;
+			}
+
+
+			.CodeDisplay {
+				text-align: left;	
+				margin-left: 10%;
+				margin-right: 10%;
+				display: inline-block;
+				
+				border-radius: 1.5em;
+				border: 1px solid grey;
+				overflow: hidden;
+			}
+			.CodeDisplay pre {
+				background: white;
+				color: blue;   
+				line-height: 1rem;
+				display: table-cell;
+				margin: 0;
+				overflow: auto;
+			}
+			 .CodeDisplay .description p {
+				display: table-cell;
+				margin:0;
+			}
+			 .CodeDisplay .description li {
+			   text-indent: 0em;
+				
+			}
+			.CodeDisplay .description {
+				display: table-cell;
+				margin:0;	 
+				width: 40%;
+				text-indent: 4rem;
+				padding: 0.5em;
+				background: white;
+			 
+			}
+			.CodeDisplay pre ol li  {    
+				border-left: 1px solid #ddd;
+				line-height: 1rem;
+				padding: 0;
+				margin: -0.8rem 0 -1rem 0;  
+				display block;
+			} 
+			.CodeDisplay code  {    
+			  padding-left: 0.5em;
+			} 
+			.CodeDisplay ol {
+				display: block;
+				list-style-type: decimal;
+				margin:0;
+				padding-left: 40px;
+				line-height: 1rem;
+			}
+		</style>		
+	</head>	
+	<body  id = "top">				
+					
+		
+<div class = "myContainerTOP myPurple">
+	<h1> Git Notes </h1>
+			
+	<table>
+	<caption> Basic Git Commands </caption>
+	<thead>
+		<tr><th>Commands</th><th>What it does</th></tr>
+	</thead>		
+	<tbody>
+	<tr><td>$ git init</td><td> Initialize local git repository</td></tr>
+	<tr><td>$ git add &lt;file&gt; </td> <td>Add File(s) To Index</td></tr>			
+	<tr><td>$ git status	</td><td>  Check status of working tree</td></tr>
+	<tr><td>$ git commit </td><td>  Commit Changes in Index</td></tr>
+	<tr><td>$ git push 	</td><td>Push to remote repository </td></tr>
+	<tr><td>$ git pull 	</td><td> Pull Latest Remote Repository </td></tr>
+	<tr><td>$ git clone </td><td> Clone Repository into a new directory</td></tr>
+	</tbody>
+	</table>
+	
+	<table>
+	<caption> Create Project and Make a Commit Example </caption>
+	</thead>
+	<tr><th>Commands</th><th>What it does</th></tr>
+	<thead>		
+	<tbody>
+	<tr><td>$ git init myproject </td>						<td>Setting up of the git control structures, creates a folder that will contain the project, and the control files that store the history snapshots.</td></tr>
+	<tr><td>$ cd myproject</td> 							<td> Move into folder </td></tr>			
+	<tr><td>$ git add . 	</td>							<td> The 'add' command that actually notices the files and puts them in a holding zone waiting to be commited.</td></tr>
+	<tr><td>$ git commit -m"Importing all the code"   </td>	<td> The 'commit' recods a snapshot that exit at the given time. The m option specifes a message.</td></tr>	
+	</tbody>
+	</table>
+	
+	<table>
+	<caption> Two Person Team Example </caption>
+	<thead>
+		<tr><th>Commands</th><th>What it does</th></tr>
+	</thead>		
+	<tbody>
+	<tr><td>Tim $ git checkout master   	    </td>					<td> doug can work on his master branch...</td></tr>
+	<tr><td>Tim $ git commit -a -m"My new logo"  </td>					<td> making another commit. with a message specified.</td></tr>			
+	<tr><td>Tim $ git push </td>										<td>  sending it to the centeral server</td></tr>
+	<tr><td>Sam $ git checkout -b Timsfeature        </td>				<td>  check out branch</td></tr>		
+	<tr><td>Sam $ git commit -a -m"My feature code"    	    </td>		<td> comit some code with a message.</td></tr>
+	<tr><td>Sam $ git push origin timfeature</td>						<td>push to server.</td></tr>			
+	<tr><td>Tim $ git pull  </td>										<td>  Retrive server's centralized files</td></tr>
+	<tr><td>Tim $ git merge timsfeature      </td>						<td>  Combine files </td></tr>		
+	</tbody>
+	</table>
+	
+	<table>
+	<caption> Documentation </caption>
+	</thead>
+	<tr><th>Commands</th><th>What it does</th></tr>
+	<thead>		
+	<tbody>
+	<tr><td>$ git add -p MyReport.markdown    	    							 </td><td>Adding little segments of a document.</td></tr>
+	<tr><td>$ git commit -m"Added latest statistics"   							 </td><td>Committing</td></tr>			
+	<tr><td>$ git log --graph --decorate --abbrev- commit --all --pretty=oneline </td><td>A graph of history of document.</td></tr>	
+	</tbody>
+	</table>	
+	
+	<table>
+	<caption> Configuring username and email </caption>
+	</thead>
+	<tr><th>Commands</th><th>What it does</th></tr>
+	<thead>		
+	<tbody>
+	<tr><td>$ git config --global user.name "Tim Devops"			</td><td>sets who to give credit to for commits.</td></tr>
+	<tr><td>$ git config --global user.email "Timdevops@gmail.com" </td><td>sets email for commits</td></tr>			
+	</tbody>
+	</table>
+					
+	<table>
+	<caption> Configuring Tooling    </caption>
+	</thead>
+	<tr><th>Commands</th><th>What it does</th></tr>
+	<thead>		
+	<tbody>
+	<tr><td>$ git config --global user.name "[name]"  							 </td><td>Sets the name you want attached to your commit transactions.</td></tr>
+	<tr><td>$ git config --global user.email "[email address]" 					 </td><td>Sets the email you want attached to your commit transactions</td></tr>			
+	<tr><td>$ git config --global color.ui auto  								 </td><td>Enables helpful colorization of command line output</td></tr>	
+	</tbody>
+	</table>
+						
+	<table>		
+	<caption> Create Reositories </caption>
+	</thead>
+	<tr><th>Commands</th><th>What it does</th></tr>
+	<thead>		
+	<tbody>
+	<tr><td>$ git init [project-name] 			</td><td>Creates a new local repository with the specified name.</td></tr>
+	<tr><td>$ git clone [url] </td><td> Downloads a project and it's entire version history.</td></tr>			
+	</tbody>
+	</table>
+			
+	<table>
+	<caption>Make Changes </caption>
+	</thead>
+	<tr><th>Commands</th><th>What it does</th></tr>
+	<thead>		
+	<tbody>
+	<tr><td>$ git status   	    </td>					<td> List all new or modified files ot be committed.</td></tr>
+	<tr><td>$ git diff  </td>					<td> Shows file differences not yet staged. </td></tr>			
+	<tr><td>$ git add [file]  </td>										<td> Snapshots the file in preparation for versioning </td></tr>
+	<tr><td>$ git diff --staged        </td>				<td> Shows file differences between staging and hte last file version</td></tr>		
+	<tr><td>$ git reset [file] 	   	    </td>		<td> Unstages the file, but preserve it's contents.</td></tr>
+	<tr><td>$ got commit -m "[descriptive message]"</td>						<td>Records file snapshots permanetly in verion history.</td></tr>			
+	</tbody>
+	</table>
+	
+	<table>
+	<caption>Group Changes </caption>
+	</thead>
+	<tr><th>Commands</th><th>What it does</th></tr>
+	<thead>		
+	<tbody>
+	<tr><td>$ git branch  	    </td>					<td> List all new or modified files ot be committed.</td></tr>
+	<tr><td>$ git branch [branch-name]   </td>					<td> Creates a new branch. </td></tr>			
+	<tr><td>$ git checkout [branch-name] </td>										<td> Switches to the specified branch and updates the working directory </td></tr>
+	<tr><td>$ git merge [branch] 		 </td>				<td>  Combines hte specified branch's history into th ecurrent branch.</td></tr>		
+	<tr><td>$ git branch -d [branch-name] </td>		<td> Deletes the specified branch.</td></tr>
+	</tbody>
+	</table>				
+
+	<table>
+	<caption>Refactor Filenames  </caption>
+	</thead>
+	<tr><th>Commands</th><th>What it does</th></tr>
+	<thead>		
+	<tbody>																 
+	<tr><td>$ git rm [file] 		                                        		                </td><td> Delete the file from the working directory and stages the deletion
+	<tr><td>$ git rm --cached [file] 		                                                        </td><td> Removes the file from version control but preserves the file locally
+	<tr><td>$ git mv [file-original] [file-renamed]   		                                        </td><td> Changes the file name and prepares it commit
+	</tbody>
+	</table>
+			
+	<table>
+	<caption>Suppress Tracking  </caption>
+	</thead>
+	<tr><th>Commands</th><th>What it does</th></tr>
+	<thead>		
+	<tbody>                                                        
+	<tr><td>*.log build/temp-*   		            		                                        </td><td> A text named .gitignore suppresses accidental versioning of files and paths matching the specified patterns
+	<tr><td>$ git ls-files --other --ignored --exclude-standard 		                            </td><td> Lists all ignored files in this project.
+	</tbody>
+	</table>
+			
+	<table>
+	<caption>Save Fragments</caption>
+	</thead>
+	<tr><th>Commands</th><th>What it does</th></tr>
+	<thead>		
+	<tbody>
+	<tr><td>$ git stash       		                                                                </td><td> Temporarily stores all modified tracked files
+	<tr><td>$ git stash pop   		                                                                </td><td> Restores the most recently stashed files
+	<tr><td>$ git stash list  		                                                                </td><td> Lists all stashed changesets
+	<tr><td>$ git stash drop  		                                                                </td><td> Discards the most recently stashed changeset
+	</tbody>
+	</table>
+			
+	<table>
+	<caption>Review History</caption>
+	</thead>
+	<tr><th>Commands</th><th>What it does</th></tr>
+	<thead>		
+	<tbody>	
+	<tr><td>$ git log 				                                                                </td><td> Lists version history for the current branch
+	<tr><td>$ git log --follow [file]				                                                </td><td> Lists version history for a file, including renames
+	<tr><td>$ git diff [first-branch]...[second-branch] 			                                </td><td> Shows content difference between two branches
+	<tr><td>$ git show [commit] 			                                                        </td><td> Outputs metadata and content changes of the specified commit
+	</tbody>
+	</table>
+			
+	<table>
+	<caption>Redo Commits </caption>
+	</thead>
+	<tr><th>Commands</th><th>What it does</th></tr>
+	<thead>		
+	<tbody>
+	<tr><td>$ git reset [commit]   		   		                                                    </td><td> Undoes all commits after [commit], preserving changes locally
+	<tr><td>$ git reset --hard [commit]  		   		                                            </td><td> Discards all history and changes back to the specified commit
+    </tbody>
+	</table>
+			                                                                      
+	<table>
+	<caption>Synchronize Changes   </caption>
+	</thead>
+	<tr><th>Commands</th><th>What it does</th></tr>
+	<thead>		
+	<tbody>	                                                    
+	<tr><td>$ git fetch [bookmark]    		    		                                            </td><td> Downloads all history from the repository bookmark
+	<tr><td>$ git merge [bookmark]/[branch] 		                                                </td><td> Combines bookmark's branch into current local branch
+	<tr><td>$ git push [alias] [branch]      		                                                </td><td> Uploads all local branch commits to GitHub
+	<tr><td>$ git pull      		            		                                            </td><td> Downloads bookmark history and incorporates changes
+	</tbody>
+	</table>
+				
+		</div>		
+	</body>	
+</html>
